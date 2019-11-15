@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="741036ff-51e3-4db3-ad72-66e45fc68e67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/SummonerResults.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/SummonerResults.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/zapp/SummonerResultsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/zapp/SummonerSearchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/zapp/zAppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/SummonerSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/SummonerSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/SummonerResults.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/SummonerSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/zapp/SummonerResultsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/zapp/SummonerSearchController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/zapp/zAppMain.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
