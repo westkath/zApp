@@ -13,8 +13,8 @@
 
 <GridPane id="searchPane" disable="false" gridLinesVisible="false" hgap="5.0" prefHeight="400.0" prefWidth="599.9998779296875" vgap="5.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ui.SummonerSearchController">
   <children>
-    <TextField id="summonerName" alignment="CENTER" prefWidth="200.0" promptText="Summoner Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-    <ComboBox id="region" prefWidth="105.0" promptText="Region" visibleRowCount="0" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+    <TextField fx:id="summonerName" alignment="CENTER" prefWidth="200.0" promptText="Summoner Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <ComboBox fx:id="region" prefWidth="105.0" promptText="Region" visibleRowCount="0" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="EUW" />

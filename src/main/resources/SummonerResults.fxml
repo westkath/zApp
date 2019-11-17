@@ -9,9 +9,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane gridLinesVisible="false" hgap="5.0" prefHeight="400.0" prefWidth="600.0" vgap="5.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ui.SummonerResultsController">
+<GridPane id="resultsPane" gridLinesVisible="false" hgap="5.0" prefHeight="400.0" prefWidth="600.0" vgap="5.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ui.SummonerResultsController">
   <children>
-    <Pane id="summonerIcon" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+    <Pane fx:id="summonerIcon" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
       <padding>
         <Insets />
       </padding>
@@ -19,22 +19,22 @@
         <Insets bottom="10.0" left="51.0" right="51.0" top="10.0" />
       </GridPane.margin>
     </Pane>
-    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+    <Pane id="soloRankIcon" fx:id="soloRankIcon" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
       <GridPane.margin>
         <Insets bottom="10.0" left="22.0" right="21.0" top="10.0" />
       </GridPane.margin>
     </Pane>
-    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+    <Pane fx:id="flexRankIcon" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
       <GridPane.margin>
         <Insets bottom="10.0" left="21.0" right="22.0" top="10.0" />
       </GridPane.margin>
     </Pane>
-    <TextField id="summonerName" alignment="CENTER" prefWidth="200.0" promptText="Summoner Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-    <TextField id="rankedSoloDuo" alignment="CENTER" prefWidth="200.0" promptText="Ranked Solo" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-    <TextField id="rankedFlex" alignment="CENTER" prefWidth="200.0" promptText="Ranked Flex" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-    <TextField id="srWR" alignment="CENTER" prefWidth="200.0" promptText="Solo WR" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-    <TextField id="flexWR" alignment="CENTER" prefWidth="200.0" promptText="Flex 5v5 WR" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-    <TextField id="summonerLevel" alignment="CENTER" editable="true" prefWidth="200.0" promptText="Summoner Level" GridPane.columnIndex="1" GridPane.rowIndex="0">
+    <TextField fx:id="summonerName" alignment="CENTER" prefWidth="200.0" promptText="Summoner Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <TextField fx:id="rankedSoloDuo" alignment="CENTER" prefWidth="200.0" promptText="Ranked Solo" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <TextField fx:id="rankedFlex" alignment="CENTER" prefWidth="200.0" promptText="Ranked Flex" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <TextField fx:id="srWR" alignment="CENTER" prefWidth="200.0" promptText="Solo WR" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <TextField fx:id="flexWR" alignment="CENTER" prefWidth="200.0" promptText="Flex 5v5 WR" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+    <TextField fx:id="summonerLevel" alignment="CENTER" editable="true" prefWidth="200.0" promptText="Summoner Level" GridPane.columnIndex="1" GridPane.rowIndex="0">
       <GridPane.margin>
         <Insets />
       </GridPane.margin>

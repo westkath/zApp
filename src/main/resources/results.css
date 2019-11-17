@@ -1,0 +1,33 @@
+/*--colours--*/
+/*--colour-navy: #0a192f;*/
+/*--colour-light-navy: #172a45;*/
+/*--colour-dark-grey: #333f58;*/
+/*--colour-slate: #8892b0;*/
+/*--colour-light-slate: #a8b2d1;*/
+/*--colour-lighter-slate: #ccd6f6;*/
+/*--colour-white: #e6f1ff;*/
+/*--colour-green: #64ffda;*/
+
+#resultsPane {
+    -fx-background-color: #0a192f;
+}
+
+TextField {
+    -fx-background-color: #172a45;
+    -fx-prompt-text-fill: #64ffda;
+    -fx-text-fill: #64ffda;
+    -fx-highlight-text-fill: #64ffda;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-border-color: #ccd6f6;
+    -fx-border-style: solid;
+}
+
+#flexRankIcon, #soloRankIcon, #summonerIcon {
+    -fx-background-color: #172a45;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-border-color: #ccd6f6;
+    -fx-border-style: solid;
+}
+
