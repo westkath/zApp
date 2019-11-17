@@ -1,8 +1,5 @@
 # zStats | Application :sparkles:
-### Author: Kathleen
-### Date: 11/2019
 
-## Project Description
 zStats is a 2-part project, composed of an application (zApp) and a library (zLibrary) that will make use of the Riot Games API to return information about a selected Summoner.
 
 ## Languages + Tools
