@@ -34,10 +34,10 @@ public class SummonerResultsController {
     }
 
     public void setIconProperties(ImageView icon) {
-        icon.setFitHeight(132.0);
-        icon.setFitWidth(132.0);
-        icon.setX(1);
-        icon.setY(1);
+        icon.setFitHeight(210.0);
+        icon.setFitWidth(210.0);
+        icon.setX(2);
+        icon.setY(2);
     }
 
 }

@@ -28,10 +28,10 @@ public class SummonerSearchController {
             showErrorMessage("NullPointerException", "Must enter both summoner name and region!");
         } else {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("SummonerResults.fxml")));
+            loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("SummonerResultsExpanded.fxml")));
 
             Parent resultsRoot = loader.load();
-            Scene resultsScene = new Scene(resultsRoot, 600, 400);
+            Scene resultsScene = new Scene(resultsRoot, 800, 600);
 
             SummonerResultsController controller = loader.getController();
 
