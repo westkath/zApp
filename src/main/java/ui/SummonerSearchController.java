@@ -38,7 +38,6 @@ public class SummonerSearchController {
 
             // Let's Make a new Summoner with the Region and Summoner Name
             SummonerResults summonerResults = new SummonerResults(summonerName.getText(), region.getValue().toString());
-            LeagueData leagueData = summonerResults.getLeagueData();
 
             // Update to Show Summoner Details
             controller.setSummonerName(summonerResults.getSummonerName());
