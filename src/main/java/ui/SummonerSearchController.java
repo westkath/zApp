@@ -11,6 +11,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import logic.LeagueData;
 import logic.SummonerResults;
 
 import java.io.IOException;
@@ -36,11 +37,13 @@ public class SummonerSearchController {
             SummonerResultsController controller = loader.getController();
 
             // Let's Make a new Summoner with the Region and Summoner Name
-            SummonerResults summoner = new SummonerResults(summonerName.getText(), region.getValue().toString());
+            SummonerResults summonerResults = new SummonerResults(summonerName.getText(), region.getValue().toString());
+            LeagueData leagueData = summonerResults.getLeagueData();
 
             // Update to Show Summoner Details
-            controller.setSummonerName(summoner.getSummonerName());
-            controller.setSummonerIcon(summoner.getSummonerIcon());
+            controller.setSummonerName(summonerResults.getSummonerName());
+            controller.setSummonerIcon(summonerResults.getSummonerIcon());
+
 
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(resultsScene);

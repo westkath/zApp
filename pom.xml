@@ -21,4 +21,14 @@
         </plugins>
     </build>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>com.merakianalytics.orianna</groupId>
+            <artifactId>orianna</artifactId>
+            <version>4.0.0-rc5</version>
+        </dependency>
+
+    </dependencies>
+
 </project>
