@@ -16,8 +16,9 @@ public class zAppMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent searchRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("SummonerSearch.fxml")));
-        Scene searchScene = new Scene(searchRoot, 600, 400);
+
+        Parent searchRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("SummonerSearchExpanded.fxml")));
+        Scene searchScene = new Scene(searchRoot, 800, 600);
 
         primaryStage.setScene(searchScene);
         primaryStage.setTitle("zStats | Application");
