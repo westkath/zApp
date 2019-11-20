@@ -23,6 +23,8 @@ public class SummonerSearchController {
     @FXML private TextField summonerName;
     @FXML private ComboBox region;
 
+    private boolean isLight;
+
     // New Method w/ Changes won't run till name changed
     public void openResultsScene(ActionEvent event) throws IOException {
         // Check Region + Summoner has been Entered
@@ -35,7 +37,11 @@ public class SummonerSearchController {
             Parent resultsRoot = loader.load();
             Scene resultsScene = new Scene(resultsRoot, 800, 600);
 
-            resultsScene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("results.css")));
+            if (isLight) {
+                resultsScene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("lightResults.css")));
+            } else {
+                resultsScene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("results.css")));
+            }
 
             SummonerResultsController controller = loader.getController();
 
@@ -75,6 +81,7 @@ public class SummonerSearchController {
         window.getScene().getStylesheets().remove(getClass().getClassLoader().getResource("search.css"));
         window.getScene().getStylesheets().clear();
         window.getScene().getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("lightSearch.css")));
+        isLight = true;
     }
 
     public void darkMode(ActionEvent event) {
@@ -82,6 +89,7 @@ public class SummonerSearchController {
         window.getScene().getStylesheets().remove(getClass().getClassLoader().getResource("lightSearch.css"));
         window.getScene().getStylesheets().clear();
         window.getScene().getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("search.css")));
+        isLight = false;
     }
 
     public void showErrorMessage(String error, String message) {
