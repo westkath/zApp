@@ -16,4 +16,5 @@ The following is a collection of tasks I set myself to complete throughout work 
 - [x] [17/11] Functionality to display icon image
 - [x] [20/11] Functionality to return all required information
 - [x] [20/11] Functionality to use Orianna
+- [x] [20/11] Functionality for a light and dark mode
 - [ ] Functionality to use zLibrary
