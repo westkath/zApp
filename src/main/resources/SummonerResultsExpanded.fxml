@@ -39,6 +39,12 @@
         <Insets />
       </GridPane.margin>
     </TextField>
+    <Button fx:id="lightButton" alignment="BOTTOM_LEFT" contentDisplay="LEFT" mnemonicParsing="false" onAction="#lightMode" text="o" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+      <GridPane.margin>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x1" />
+      </GridPane.margin>
+    </Button>
+    <Button fx:id="darkButton" mnemonicParsing="false" onAction="#darkMode" text="o" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.margin="$x1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
   </children>
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" />
@@ -51,7 +57,4 @@
     <RowConstraints minHeight="10.0" percentHeight="15.078328981723239" vgrow="SOMETIMES" />
     <RowConstraints minHeight="10.0" percentHeight="30.156657963446477" vgrow="SOMETIMES" />
   </rowConstraints>
-  <stylesheets>
-    <URL value="@results.css" />
-  </stylesheets>
 </GridPane>

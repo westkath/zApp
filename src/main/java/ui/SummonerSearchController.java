@@ -35,6 +35,8 @@ public class SummonerSearchController {
             Parent resultsRoot = loader.load();
             Scene resultsScene = new Scene(resultsRoot, 800, 600);
 
+            resultsScene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("results.css")));
+
             SummonerResultsController controller = loader.getController();
 
             // Let's Make a new Summoner with the Region and Summoner Name
@@ -66,6 +68,20 @@ public class SummonerSearchController {
             }
 
         }
+    }
+
+    public void lightMode(ActionEvent event) {
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.getScene().getStylesheets().remove(getClass().getClassLoader().getResource("search.css"));
+        window.getScene().getStylesheets().clear();
+        window.getScene().getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("lightSearch.css")));
+    }
+
+    public void darkMode(ActionEvent event) {
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.getScene().getStylesheets().remove(getClass().getClassLoader().getResource("lightSearch.css"));
+        window.getScene().getStylesheets().clear();
+        window.getScene().getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("search.css")));
     }
 
     public void showErrorMessage(String error, String message) {

@@ -18,9 +18,9 @@ public class zAppMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
         Parent searchRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("SummonerSearchExpanded.fxml")));
         Scene searchScene = new Scene(searchRoot, 800, 600);
+        searchScene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("search.css")));
 
         primaryStage.setScene(searchScene);
         primaryStage.setTitle("zStats | Application");

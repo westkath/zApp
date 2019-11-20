@@ -1,10 +1,13 @@
 package ui;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,6 +27,20 @@ public class SummonerResultsController {
     @FXML private Pane flexRankIcon;
     @FXML private TextField rankedFlex;
     @FXML private TextField flexWR;
+
+    public void lightMode(ActionEvent event) {
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.getScene().getStylesheets().remove(getClass().getClassLoader().getResource("results.css"));
+        window.getScene().getStylesheets().clear();
+        window.getScene().getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("lightResults.css")));
+    }
+
+    public void darkMode(ActionEvent event) {
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.getScene().getStylesheets().remove(getClass().getClassLoader().getResource("lightResults.css"));
+        window.getScene().getStylesheets().clear();
+        window.getScene().getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("results.css")));
+    }
 
     public void setSummonerIcon(int iconId) {
         String pathToIcon = accessSummonerIcon(iconId);

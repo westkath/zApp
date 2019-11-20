@@ -23,8 +23,8 @@
       </items>
     </ComboBox>
     <Button id="searchButton" fx:id="search" contentDisplay="CENTER" defaultButton="false" mnemonicParsing="false" onAction="#openResultsScene" text="&gt;&gt;" textAlignment="CENTER" underline="false" wrapText="false" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
-    <Button mnemonicParsing="false" text="o" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
-    <Button mnemonicParsing="false" text="o" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+    <Button fx:id="lightButton" mnemonicParsing="false" onAction="#lightMode" text="o" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+    <Button fx:id="darkButton" mnemonicParsing="false" onAction="#darkMode" text="o" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
   </children>
   <columnConstraints>
     <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" />
@@ -39,7 +39,4 @@
     <RowConstraints maxHeight="122.0" minHeight="10.0" percentHeight="40.0" prefHeight="33.0" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="164.0" minHeight="10.0" percentHeight="30.0" prefHeight="164.0" vgrow="SOMETIMES" />
   </rowConstraints>
-  <stylesheets>
-    <URL value="@search.css" />
-  </stylesheets>
 </GridPane>
