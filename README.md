@@ -14,5 +14,6 @@ The following is a collection of tasks I set myself to complete throughout work 
 - [x] [16/11] Functionality to switch from search to results
 - [x] [17/11] Functionality to transfer information from search to results
 - [x] [17/11] Functionality to display icon image
-- [ ] Functionality to return all required information
+- [x] [20/11] Functionality to return all required information
+- [x] [20/11] Functionality to use Orianna
 - [ ] Functionality to use zLibrary
