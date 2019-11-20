@@ -28,6 +28,22 @@ public class SummonerResultsController {
     @FXML private TextField rankedFlex;
     @FXML private TextField flexWR;
 
+    public void saveAsPDF(ActionEvent event) {
+        // Write to PDF File, File Structure:
+        // Summoner Name's Details
+        // Level
+        // Icon - reasonable size?
+        // Ranked Solo Details
+        // Rank
+        // Icon for Rank - reasonable size?
+        // Winrate for Ranked
+        // Ranked Flex Details
+        // Rank
+        // Icon for Rank - reasonable size
+        // Winrate for Rank
+        // https://www.baeldung.com/java-pdf-creation
+    }
+
     public void lightMode(ActionEvent event) {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.getScene().getStylesheets().remove(getClass().getClassLoader().getResource("results.css"));
