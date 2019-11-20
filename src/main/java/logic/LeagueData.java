@@ -9,9 +9,14 @@ public class LeagueData {
     private Summoner summoner;
 
     private String rankedSoloDuo;
+    private String rankedSoloTier;
     private double srWR;
 
+    private boolean hasSolo;
+    private boolean hasFlex;
+
     private String rankedFlex;
+    private String rankedFlexTier;
     private double flexWR;
 
     public LeagueData(Summoner summoner) {
@@ -22,46 +27,58 @@ public class LeagueData {
 
     public void getRankedSoloData() {
         LeagueEntry leaguePosition = summoner.getLeaguePosition(Queue.RANKED_SOLO);
-        this.rankedSoloDuo = leaguePosition.getDivision().toString() + leaguePosition.getTier().toString();
-        this.srWR = leaguePosition.getWins() / (leaguePosition.getWins() + leaguePosition.getLosses());
+        if (leaguePosition == null) {
+            this.hasSolo = false;
+        } else {
+            this.rankedSoloDuo = leaguePosition.getTier().toString() + " " + leaguePosition.getDivision().toString();
+            this.rankedSoloTier = leaguePosition.getTier().toString();
+            this.srWR = Math.round(((double) leaguePosition.getWins() / ((double) leaguePosition.getWins() + (double) leaguePosition.getLosses())) * 100);
+            this.hasSolo = true;
+        }
     }
 
     public void getRankedFlexData() {
         LeagueEntry leaguePosition = summoner.getLeaguePosition(Queue.RANKED_FLEX);
-        this.rankedFlex = leaguePosition.getDivision().toString() + leaguePosition.getTier().toString();
-        this.flexWR = leaguePosition.getWins() / (leaguePosition.getWins() + leaguePosition.getLosses());
+        if (leaguePosition == null) {
+            this.hasFlex = false;
+        } else {
+            this.rankedFlex = leaguePosition.getTier().toString() + " " + leaguePosition.getDivision().toString();
+            this.rankedFlexTier = leaguePosition.getTier().toString();
+            this.flexWR = Math.round(((double) leaguePosition.getWins() / ((double) leaguePosition.getWins() + (double) leaguePosition.getLosses())) * 100);
+            this.hasFlex = true;
+        }
     }
 
     public String getRankedSoloDuo() {
         return rankedSoloDuo;
     }
 
-    public void setRankedSoloDuo(String rankedSoloDuo) {
-        this.rankedSoloDuo = rankedSoloDuo;
-    }
-
     public double getSrWR() {
         return srWR;
-    }
-
-    public void setSrWR(double srWR) {
-        this.srWR = srWR;
-    }
-
-    public void setRankedFlex(String rankedFlex) {
-        this.rankedFlex = rankedFlex;
     }
 
     public double getFlexWR() {
         return flexWR;
     }
 
-    public void setFlexWR(double flexWR) {
-        this.flexWR = flexWR;
+    public String getRankedSoloTier() {
+        return rankedSoloTier;
+    }
+
+    public String getRankedFlexTier() {
+        return rankedFlexTier;
     }
 
     public String getRankedFlex() {
         return rankedFlex;
+    }
+
+    public boolean getHasSolo() {
+        return this.hasSolo;
+    }
+
+    public boolean getHasFlex() {
+        return this.hasFlex;
     }
 
 }

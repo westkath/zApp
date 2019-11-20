@@ -31,3 +31,6 @@ TextField {
     -fx-border-style: solid;
 }
 
+ImageView {
+    -fx-margin: 0px;
+}

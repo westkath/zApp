@@ -4,54 +4,122 @@ import com.merakianalytics.orianna.Orianna;
 import com.merakianalytics.orianna.types.common.Region;
 import com.merakianalytics.orianna.types.core.summoner.Summoner;
 
+import java.io.IOException;
+import java.util.Properties;
+
 public class SummonerResults {
 
     private String region; // kinda obsolete
     private String summonerName;
     private int summonerLevel;
-    private String summonerIcon;
+    private int summonerIcon;
     private String rankedSoloDuo;
-    private String soloRankIcon;
+    private String soloRankTier;
     private double srWR;
     private String rankedFlex;
-    private String flexRankIcon;
+    private String flexRankTier;
     private double flexWR;
+    private SummonerData summonerData;
     private LeagueData leagueData;
+    private boolean hasSolo;
+    private boolean hasFlex;
+    private boolean invalid;
 
-    public SummonerResults(String summonerName, String region) {
+    public SummonerResults(String summonerName, String region) throws IOException {
         this.summonerName = summonerName;
         this.region = region;
-        // Retrieve and Assign Appropriate Values
-        // getSummonerData(); todo this later
         getLeagueData();
-        this.rankedSoloDuo = leagueData.getRankedSoloDuo();
-        this.srWR = leagueData.getSrWR();
-        this.rankedFlex = leagueData.getRankedFlex();
-        this.flexWR = leagueData.getFlexWR();
+        if (invalid) {
+            this.invalid = true;
+        } else {
+            this.invalid = false;
+            this.summonerIcon = summonerData.getIconId();
+            this.summonerLevel = summonerData.getSummonerLevel();
+            this.rankedSoloDuo = leagueData.getRankedSoloDuo();
+            this.soloRankTier = leagueData.getRankedSoloTier();
+            this.srWR = leagueData.getSrWR();
+            this.rankedFlex = leagueData.getRankedFlex();
+            this.flexRankTier = leagueData.getRankedFlexTier();
+            this.flexWR = leagueData.getFlexWR();
+            this.hasSolo = leagueData.getHasSolo();
+            this.hasFlex = leagueData.getHasFlex();
+        }
     }
 
     public void getLeagueData() {
-        Orianna.setRiotAPIKey("RGAPI-1ca619e6-d887-40b9-988e-6542cf9e7d64");
-        Orianna.setDefaultRegion(Region.NORTH_AMERICA);
+        String api_key = getAPIKey();
+        Orianna.setRiotAPIKey(api_key);
+        Orianna.setDefaultRegion(Region.EUROPE_WEST);
         SummonerData data = new SummonerData(summonerName, region);
-        Summoner summoner = data.getSummoner(); // todo fix the summonerdata class for this, ensure everything is set up correctly!
-        this.leagueData = new LeagueData(summoner);
+        if (data.getInvalid()) {
+            this.invalid = true;
+        } else {
+            this.invalid = false;
+            this.summonerData = data;
+            Summoner summoner = data.getSummoner();
+            this.leagueData = new LeagueData(summoner);
+        }
     }
 
     public String getSummonerName() {
         return this.summonerName;
     }
 
-    public String getSummonerIcon() {
-        return String.valueOf(getClass().getClassLoader().getResource("testIcon.png"));
+    public int getSummonerIcon() {
+        return this.summonerIcon;
     }
 
-    public String toString(double val) {
-        return String.valueOf(val);
+    public int getSummonerLevel() {
+        return summonerLevel;
     }
 
-    public String toString(int val) {
-        return String.valueOf(val);
+    public String getRankedSoloDuo() {
+        return rankedSoloDuo;
+    }
+
+    public String getSoloRankTier() {
+        return soloRankTier;
+    }
+
+    public double getSrWR() {
+        return srWR;
+    }
+
+    public String getRankedFlex() {
+        return rankedFlex;
+    }
+
+    public String getFlexRankTier() {
+        return flexRankTier;
+    }
+
+    public double getFlexWR() {
+        return flexWR;
+    }
+
+    public boolean isHasSolo() {
+        return hasSolo;
+    }
+
+    public boolean isHasFlex() {
+        return hasFlex;
+    }
+
+    public boolean isInvalid() {
+        return invalid;
+    }
+
+    public String getAPIKey() {
+        Properties prop = new Properties();
+        try {
+            //load a properties file from class path, inside static method
+            prop.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
+            return prop.getProperty("api_key");
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return "";
     }
 
 }

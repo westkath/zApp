@@ -29,12 +29,12 @@
         <Insets bottom="10.0" left="21.0" right="22.0" top="10.0" />
       </GridPane.margin>
     </Pane>
-    <TextField fx:id="summonerName" alignment="CENTER" prefWidth="200.0" promptText="Summoner Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-    <TextField fx:id="rankedSoloDuo" alignment="CENTER" prefWidth="200.0" promptText="Ranked Solo" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-    <TextField fx:id="rankedFlex" alignment="CENTER" prefWidth="200.0" promptText="Ranked Flex" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-    <TextField fx:id="srWR" alignment="CENTER" prefWidth="200.0" promptText="Solo WR" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-    <TextField fx:id="flexWR" alignment="CENTER" prefWidth="200.0" promptText="Flex 5v5 WR" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-    <TextField fx:id="summonerLevel" alignment="CENTER" editable="true" prefWidth="200.0" promptText="Summoner Level" GridPane.columnIndex="1" GridPane.rowIndex="0">
+    <TextField fx:id="summonerName" alignment="CENTER" editable="false" prefWidth="200.0" promptText="Summoner Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <TextField fx:id="rankedSoloDuo" alignment="CENTER" editable="false" prefWidth="200.0" promptText="Ranked Solo" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <TextField fx:id="rankedFlex" alignment="CENTER" editable="false" prefWidth="200.0" promptText="Ranked Flex" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <TextField fx:id="srWR" alignment="CENTER" editable="false" prefWidth="200.0" promptText="Solo WR" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <TextField fx:id="flexWR" alignment="CENTER" editable="false" prefWidth="200.0" promptText="Flex 5v5 WR" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+    <TextField fx:id="summonerLevel" alignment="CENTER" editable="false" prefWidth="200.0" promptText="Summoner Level" GridPane.columnIndex="1" GridPane.rowIndex="0">
       <GridPane.margin>
         <Insets />
       </GridPane.margin>

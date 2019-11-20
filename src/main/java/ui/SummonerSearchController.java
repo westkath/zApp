@@ -1,5 +1,6 @@
 package ui;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,14 +39,32 @@ public class SummonerSearchController {
 
             // Let's Make a new Summoner with the Region and Summoner Name
             SummonerResults summonerResults = new SummonerResults(summonerName.getText(), region.getValue().toString());
+            if (summonerResults.isInvalid()) {
+                showErrorMessage("Summoner not found!", "You have not entered a valid summoner.");
+                Platform.exit(); // to adapt in future versions
+                System.exit(0);
+            } else {
+                // Update to Show Summoner Details
+                controller.setSummonerName(summonerResults.getSummonerName());
+                controller.setSummonerIcon(summonerResults.getSummonerIcon());
+                controller.setSummonerLevel(summonerResults.getSummonerLevel());
 
-            // Update to Show Summoner Details
-            controller.setSummonerName(summonerResults.getSummonerName());
-            controller.setSummonerIcon(summonerResults.getSummonerIcon());
+                if (summonerResults.isHasSolo()) {
+                    controller.setSoloRankIcon(summonerResults.getSoloRankTier());
+                    controller.setRankedSoloDuo(summonerResults.getRankedSoloDuo());
+                    controller.setSrWR(summonerResults.getSrWR());
+                }
 
+                if (summonerResults.isHasFlex()) {
+                    controller.setFlexRankIcon(summonerResults.getFlexRankTier());
+                    controller.setRankedFlex(summonerResults.getRankedFlex());
+                    controller.setFlexWR(summonerResults.getFlexWR());
+                }
 
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(resultsScene);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(resultsScene);
+            }
+
         }
     }
 
