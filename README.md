@@ -27,28 +27,28 @@ The following screenshots will provide an overview of the running app, with scre
 
 ### Search Screen
 Search Screen (Dark & Light Examples)
-![Search Screen (Dark)](appImages/searchDark.PNG)
-![Search Screen (Light)](appImages/searchLight.PNG)
+![Search Screen (Dark)](appImages/searchDark.PNG =200x150)
+![Search Screen (Light)](appImages/searchLight.PNG =200x150)
 Above are examples of the search screen when loaded. To switch between light and dark mode, bottom left button switches on light mode, bottom right button switches on dark mode.
 
 Error Messages
-![Search Screen - Invalid Summoner Name](appImages/searchInvalid.PNG)
+![Search Screen - Invalid Summoner Name](appImages/searchInvalid.PNG =200x150)
 If the summoner name entered has any special characters, this is displayed and the app will exit.
 
-![Search Screen - Blank Field](appImages/searchBlank.PNG)
+![Search Screen - Blank Field](appImages/searchBlank.PNG =200x150)
 If either the region or summoner name are blank, this error will display.
 
 ### Results Screen
 Results Screen (Dark & Light Examples)
-![Results Screen (Dark)](appImages/resultsDark.PNG)
-![Results Screen (Light)](appImages/resultsLight.PNG)
+![Results Screen (Dark)](appImages/resultsDark.PNG =200x150)
+![Results Screen (Light)](appImages/resultsLight.PNG =200x150)
 Above are examples of the results screen when loaded. To switch between light and dark mode, bottom left button switches on light mode, bottom right button switches on dark mode.
 
 ### Export to Text File
 Export to Text File Examples
-![Export Confirmation](appImages/resultsFile.PNG)
+![Export Confirmation](appImages/resultsFile.PNG =200x150)
 Once a file has been created in the output directory, the following message will display and the app will exit.
 
 Text File Example Format
-![Text File Example](appImages/fileExample.PNG)
+![Text File Example](appImages/fileExample.PNG =200x150)
 Above is an example of an exported text file, it will only show ranked information if the player has a rank.
