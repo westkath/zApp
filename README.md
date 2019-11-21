@@ -20,7 +20,16 @@ The following is a collection of tasks I set myself to complete throughout work 
 - [x] [21/11] Functionality to export to a text file
 - [x] [21/11] Functionality to ensure summoner name contains no special characters
 - [x] [21/11] Creation and usage of application icon
+- [x] [21/11] Functionality to package as a jar-with-dependencies and run jar
 - [ ] Functionality to use zLibrary
+
+## Usage
+To make use of zApp on your own computer:
+- clone the repository to a folder
+- head to the config.properties file and insert the api key where it says 'YOUR_API_KEY'
+- create a new maven configuration that packages the app
+- find target/app.1.0-SNAPSHOT-jar-with-dependencies.jar and run it
+- use the application as intended
 
 ## Running App Examples
 The following screenshots will provide an overview of the running app, with screenshots to support this.
