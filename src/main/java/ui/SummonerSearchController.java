@@ -30,6 +30,10 @@ public class SummonerSearchController {
         // Check Region + Summoner has been Entered
         if (summonerName.getText() == null || region.getValue() == null) {
             showErrorMessage("NullPointerException", "Must enter both summoner name and region!");
+        } else if (!isNotValidSummonerName(summonerName.getText())) {
+            showErrorMessage("Invalid Summoner Name!", "Summoner name has invalid characters, exiting program.");
+            Platform.exit();
+            System.exit(0);
         } else {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("SummonerResultsExpanded.fxml")));
@@ -48,7 +52,7 @@ public class SummonerSearchController {
             // Let's Make a new Summoner with the Region and Summoner Name
             SummonerResults summonerResults = new SummonerResults(summonerName.getText(), region.getValue().toString());
             if (summonerResults.isInvalid()) {
-                showErrorMessage("Summoner not found!", "You have not entered a valid summoner.");
+                showErrorMessage("Summoner not found!", "You have not entered a valid summoner, exiting program.");
                 Platform.exit(); // to adapt in future versions
                 System.exit(0);
             } else {
@@ -102,6 +106,12 @@ public class SummonerSearchController {
                 System.out.println("Pressed OK.");
             }
         });
+    }
+
+    public boolean isNotValidSummonerName(String name) {
+        return ((!name.equals(""))
+                && (name != null)
+                && (name.matches("^[a-zA-Z0-9]*$")));
     }
 
 }
