@@ -52,7 +52,6 @@ nb-configuration.xml
 # Misc
 *.swp
 release.properties
-config.properties
 pom.xml.releaseBackup
 pom.xml.tag
-outputReports/
+outputReports/*.txt
