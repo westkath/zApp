@@ -33,7 +33,9 @@ public class SummonerResultsController {
 
     public void saveAsTxtFile() throws IOException {
         String summonerTempName = summonerName.getText().replace("Summoner: ", "");
-        String path = "C:/Users/GA1/Desktop/PersonalProject/zApp/src/main/resources/outputReports/" + summonerTempName + ".txt";
+        String path = getResourceString() + "outputReports/" + summonerTempName + ".txt";
+
+        File outFile = new File(path);
 
         StringBuilder output = new StringBuilder();
         output.append("============================================" + "\n");
@@ -89,7 +91,7 @@ public class SummonerResultsController {
     }
 
     public void setSoloRankIcon(String rank) {
-        String pathToIcon = "C:/Users/GA1/Desktop/PersonalProject/zApp/src/main/resources/rankedTierIcons/" + rank.toLowerCase() + ".png";
+        String pathToIcon = getResourceString() + "rankedTierIcons/" + rank.toLowerCase() + ".png";
         ImageView icon = new ImageView(new Image("file:/" + pathToIcon));
         setIconProperties(icon);
         this.soloRankIcon.getChildren().add(icon);
@@ -104,7 +106,7 @@ public class SummonerResultsController {
     }
 
     public void setFlexRankIcon(String rank) {
-        String pathToIcon = "C:/Users/GA1/Desktop/PersonalProject/zApp/src/main/resources/rankedTierIcons/" + rank.toLowerCase() + ".png";
+        String pathToIcon = getResourceString() + "rankedTierIcons/" + rank.toLowerCase() + ".png";
         ImageView icon = new ImageView(new Image("file:/" + pathToIcon));
         setIconProperties(icon);
         this.flexRankIcon.getChildren().add(icon);
@@ -127,7 +129,7 @@ public class SummonerResultsController {
     }
 
     public String accessSummonerIcon(int iconId) {
-        String fileOutputPath = "C:/Users/GA1/Desktop/PersonalProject/zApp/src/main/resources/" + String.valueOf(iconId) + ".png";
+        String fileOutputPath = getResourceString() + String.valueOf(iconId) + ".png";
 
         File icon = new File(fileOutputPath);
 
@@ -168,6 +170,16 @@ public class SummonerResultsController {
                 System.out.println("Pressed OK.");
             }
         });
+    }
+
+    public String getResourceString() {
+        URL tempURL = getClass().getClassLoader().getResource("search.css");
+        String tempString = tempURL.toString().replace("file:/", "");
+        tempString = tempString.replace("search.css", "");
+        tempString = tempString.replace("jar:", "");
+        tempString = tempString.replace("!", "");
+        tempString = tempString.replace("app-1.0-SNAPSHOT-jar-with-dependencies.jar", "classes");
+        return tempString;
     }
 
 }
