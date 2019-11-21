@@ -19,6 +19,7 @@ The following is a collection of tasks I set myself to complete throughout work 
 - [x] [20/11] Functionality for a light and dark mode
 - [x] [21/11] Functionality to export to a text file
 - [x] [21/11] Functionality to ensure summoner name contains no special characters
+- [x] [21/11] Creation and usage of application icon
 - [ ] Functionality to use zLibrary
 
 ## Running App Examples
