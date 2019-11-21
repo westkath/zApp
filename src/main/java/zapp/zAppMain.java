@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -23,6 +24,7 @@ public class zAppMain extends Application {
         searchScene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("search.css")));
 
         primaryStage.setScene(searchScene);
+        primaryStage.getIcons().add(new Image(String.valueOf(getClass().getClassLoader().getResource("icon.png"))));
         primaryStage.setTitle("zStats | Application");
         primaryStage.show();
     }
