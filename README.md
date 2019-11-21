@@ -17,4 +17,21 @@ The following is a collection of tasks I set myself to complete throughout work 
 - [x] [20/11] Functionality to return all required information
 - [x] [20/11] Functionality to use Orianna
 - [x] [20/11] Functionality for a light and dark mode
+- [x] [21/11] Functionality to export to a text file
+- [x] [21/11] Functionality to ensure summoner name contains no special characters
 - [ ] Functionality to use zLibrary
+
+## Running App Examples
+The following screenshots will provide an overview of the running app, with screenshots to support this.
+
+### Search Screen
+
+
+### Results Screen
+
+
+### Light & Dark Mode
+
+
+### Export to Text File
+
