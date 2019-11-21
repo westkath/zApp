@@ -1,8 +1,11 @@
 package ui;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -28,20 +31,40 @@ public class SummonerResultsController {
     @FXML private TextField rankedFlex;
     @FXML private TextField flexWR;
 
-    public void saveAsPDF(ActionEvent event) {
-        // Write to PDF File, File Structure:
-        // Summoner Name's Details
-        // Level
-        // Icon - reasonable size?
-        // Ranked Solo Details
-        // Rank
-        // Icon for Rank - reasonable size?
-        // Winrate for Ranked
-        // Ranked Flex Details
-        // Rank
-        // Icon for Rank - reasonable size
-        // Winrate for Rank
-        // https://www.baeldung.com/java-pdf-creation
+    public void saveAsTxtFile() throws IOException {
+        String summonerTempName = summonerName.getText().replace("Summoner: ", "");
+        String path = "C:/Users/GA1/Desktop/PersonalProject/zApp/src/main/resources/outputReports/" + summonerTempName + ".txt";
+
+        StringBuilder output = new StringBuilder();
+        output.append("============================================" + "\n");
+        output.append("Summoner Report Generated for " + summonerTempName + "\n");
+        output.append(summonerLevel.getText() + "\n");
+        output.append("============================================");
+        output.append("\n" + "\n");
+
+        if (!rankedSoloDuo.getText().equals("")) {
+            output.append("============================================" + "\n");
+            output.append(rankedSoloDuo.getText() + "\n");
+            output.append(srWR.getText() + "\n");
+            output.append("============================================" + "\n");
+            output.append("\n");
+        }
+
+        if (!rankedFlex.getText().equals("")) {
+            output.append("============================================" + "\n");
+            output.append(rankedFlex.getText() + "\n");
+            output.append(flexWR.getText() + "\n");
+            output.append("============================================" + "\n");
+            output.append("\n");
+        }
+
+        String finalOutput = output.toString();
+        Files.write(Paths.get(path), finalOutput.getBytes());
+
+        showMessage("File Created!", "Location: " + path);
+
+        Platform.exit();
+        System.exit(0);
     }
 
     public void lightMode(ActionEvent event) {
@@ -133,6 +156,18 @@ public class SummonerResultsController {
         icon.setFitWidth(195.0);
         icon.setX(0);
         icon.setY(5);
+    }
+
+    public void showMessage(String message, String details) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success!");
+        alert.setHeaderText(message);
+        alert.setContentText(details);
+        alert.showAndWait().ifPresent(rs -> {
+            if (rs == ButtonType.OK) {
+                System.out.println("Pressed OK.");
+            }
+        });
     }
 
 }
