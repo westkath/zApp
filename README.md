@@ -54,7 +54,6 @@ Export to Text File Examples
 
 Once a file has been created in the output directory, the following message will display and the app will exit.
 
-Text File Example Format
 ![Text File Example](appImages/fileExample.PNG)
 
 Above is an example of an exported text file, it will only show ranked information if the player has a rank.
