@@ -30,6 +30,7 @@ To make use of zApp on your own computer:
 - create a new maven configuration that packages the app
 - find target/app.1.0-SNAPSHOT-jar-with-dependencies.jar and run it
 - use the application as intended
+**(Please Note: the target/app.1.0-SNAPSHOT.jar will not run as it hasn't been configured correctly, nor does it have a main class defined, in future updates the file won't be created)**
 
 ## Running App Examples
 The following screenshots will provide an overview of the running app, with screenshots to support this.
